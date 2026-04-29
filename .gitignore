@@ -10,7 +10,3 @@ node_modules/
 
 .vercel
 
-# Large videos — deployed via Vercel CLI, not GitHub
-PPT/videos/4.mp4
-PPT/videos/5.mp4
-PPT/videos/6.mp4
