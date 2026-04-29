@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Designs&Words — a Jaipur-based branding studio. From logo to language, we shape how your audience feels your story.">
-<meta property="og:title" content="Designs&Words — Branding · Identity · Story">
-<meta property="og:description" content="A Jaipur-based branding studio. Identities that carry weight, voice, and memory.">
+<meta name="description" content="Designs&Words — Branding. Where strategy meets visual identity. From logo to language, we shape how your audience feels your story.">
+<meta property="og:title" content="Designs&Words — Branding">
+<meta property="og:description" content="Where strategy meets visual identity. From logo to language, we shape how your audience feels your story.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/mvip.avif">
-<meta name="theme-color" content="#0E0E0C">
-<title>Designs&amp;Words — Branding · Identity · Story</title>
+<meta name="theme-color" content="#0E0E10">
+<title>Branding — Designs&amp;Words</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
@@ -21,28 +21,27 @@
 </head>
 <body>
 
-<!-- Loader: 'Designs' fades in left, italic & in accent pops centre, 'Words' fades in right -->
+<!-- Loader: DESIGNS slides in from left, & pops, WORDS slides in from right -->
 <div class="loader" id="loader" role="status" aria-label="Loading">
   <div class="loader-mark" aria-label="Designs and Words">
-    <span class="left">Designs</span><span class="amp">&amp;</span><span class="right">Words</span>
+    <div class="loader-mark__word loader-mark__word--left">
+      <span style="--i:1">D</span><span style="--i:2">E</span><span style="--i:3">S</span><span style="--i:4">I</span><span style="--i:5">G</span><span style="--i:6">N</span><span style="--i:7">S</span>
+    </div>
+    <div class="loader-mark__amp">&amp;</div>
+    <div class="loader-mark__word">
+      <span style="--i:1">W</span><span style="--i:2">O</span><span style="--i:3">R</span><span style="--i:4">D</span><span style="--i:5">S</span>
+    </div>
   </div>
 </div>
 
-<!-- Cursor (desktop) -->
-<div class="cursor" id="cursor" aria-hidden="true"></div>
+<!-- Custom cursor (desktop only) -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel">View</span></div>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <a class="logo" href="#top" data-cursor>
-    <span class="dot"></span> Designs<em>&amp;</em>Words
-  </a>
-  <ul>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#capabilities">Capabilities</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a class="nav-cta" href="#contact" data-cursor>Start a project →</a>
+<!-- Nav -->
+<nav class="nav">
+  <a href="#top" class="nav__brand" data-cursor>D&amp;W</a>
+  <a href="#start" class="nav__cta" data-cursor data-cursor-label="Start">Start a project →</a>
   <button class="nav__hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span>
   </button>
@@ -50,229 +49,134 @@
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <ul>
+  <ul class="mobile-menu__links">
     <li><a href="#work">Work</a></li>
-    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#what">Branding</a></li>
     <li><a href="#process">Process</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#start">Contact</a></li>
   </ul>
-  <a href="#contact" class="mm-cta">Start a project →</a>
+  <a href="#start" class="mobile-menu__cta">Start a project →</a>
 </div>
 
-<!-- HERO -->
-<header class="hero" id="top">
-  <div>
-    <div class="eyebrow"><span class="bar"></span><span>Branding · Identity · Story · Est. 2018</span></div>
-    <h1 class="reveal">
-      Where <em>strategy</em><br>
-      meets <span class="outline">visual</span><br>
-      identity.
-    </h1>
-  </div>
-  <div class="hero-bottom">
-    <p class="hero-lede reveal">
-      <strong>Designs &amp; Words</strong> is a Jaipur-based branding studio. From logo to language, we shape how your audience <em>feels</em> your story — building identities that carry weight, voice, and memory.
-    </p>
-    <div class="hero-meta reveal">
-      <span><b>72</b> brands launched</span>
-      <span><b>14</b> industries served</span>
-      <span><b>06</b> awards received</span>
-      <span><b>2026</b> · taking new work</span>
-    </div>
-  </div>
-  <div class="scroll-cue">Scroll</div>
-</header>
+<!-- Hero -->
+<section class="hero" id="top">
+  <h1 class="hero__headline">Where strategy meets visual identity.</h1>
+  <p class="hero__sub tiny--lower">From logo to language, we shape how your audience feels your story.</p>
+  <a href="#work" class="hero__scroll" data-cursor>Scroll ↓</a>
+</section>
 
-<!-- MARQUEE -->
-<section class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Identity Systems <em>·</em> Visual Language <span class="star">✦</span> Brand Strategy <em>·</em> Naming <span class="star">✦</span> Editorial Design <em>·</em> Packaging <span class="star">✦</span> Motion <em>·</em> Web</span>
-    <span>Identity Systems <em>·</em> Visual Language <span class="star">✦</span> Brand Strategy <em>·</em> Naming <span class="star">✦</span> Editorial Design <em>·</em> Packaging <span class="star">✦</span> Motion <em>·</em> Web</span>
+<!-- Selected work header -->
+<section class="work-intro" id="work">
+  <h2 class="work-intro__title" data-fade>Selected work.</h2>
+  <p class="work-intro__sub tiny--lower" data-fade>Six cases. Same discipline.</p>
+</section>
+
+<!-- Case 01 — MVIP -->
+<section class="section showcase showcase--mvip" id="mvip" data-image="right" data-surface="light" data-parallax aria-label="MVIP case study">
+  <div class="showcase__image"><div class="showcase__inner"></div></div>
+  <div class="showcase__copy" data-fade>
+    <div class="showcase__eyebrow">Case 01 · Industrial · Heritage</div>
+    <h3 class="showcase__name">MVIP</h3>
+    <p class="showcase__line">A digital identity designed to reflect decades of industrial excellence and forward-looking vision.</p>
+    <a href="https://designsandwords.in/brand1" class="showcase__cta" data-cursor data-cursor-label="Read" target="_blank" rel="noopener">Explore the full brand manual →</a>
   </div>
 </section>
 
-<!-- SELECTED WORK -->
-<div class="section-head reveal" id="work">
-  <div class="num">/ 01 — Selected Work</div>
-  <h2>Identities that <em>carry weight,</em> not just look the part.</h2>
-</div>
-
-<section class="work">
-  <div class="work-grid">
-
-    <!-- MVIP — large -->
-    <a class="tile large art-mvip" data-tile data-cursor>
-      <div class="canvas"></div>
-      <div class="meta">
-        <div>
-          <h3>MVIP Industries</h3>
-          <p>Identity · Brand Manual · Web</p>
-        </div>
-        <span class="tag">Featured</span>
-      </div>
-    </a>
-
-    <!-- MEGA — medium -->
-    <a class="tile medium art-mega" data-tile data-cursor>
-      <div class="canvas"></div>
-      <div class="meta">
-        <div>
-          <h3>MEGA</h3>
-          <p>Consumer · Identity</p>
-        </div>
-        <span class="tag">2025</span>
-      </div>
-    </a>
-
-    <!-- Ginni Devi Memorial Hospital — wide -->
-    <a class="tile wide art-ginni" data-tile data-cursor>
-      <div class="canvas"></div>
-      <div class="meta">
-        <div>
-          <h3>Ginni Devi Memorial Hospital</h3>
-          <p>Healthcare · Logo · Identity</p>
-        </div>
-        <span class="tag">2025</span>
-      </div>
-    </a>
-
-    <!-- Rajshree Marbles — tall -->
-    <a class="tile tall art-rajshree" data-tile data-cursor>
-      <div class="canvas"></div>
-      <div class="meta">
-        <div>
-          <h3>Rajshree Marbles</h3>
-          <p>Stone · Brand · Catalog</p>
-        </div>
-        <span class="tag">2024</span>
-      </div>
-    </a>
-
-    <!-- Roase — half -->
-    <a class="tile half art-roase" data-tile data-cursor>
-      <div class="canvas"></div>
-      <div class="meta">
-        <div>
-          <h3>Roase</h3>
-          <p>Lifestyle · Identity · Story</p>
-        </div>
-        <span class="tag">2024</span>
-      </div>
-    </a>
-
-    <!-- Roase 2 — half -->
-    <a class="tile half art-roase2" data-tile data-cursor>
-      <div class="canvas"></div>
-      <div class="meta">
-        <div>
-          <h3>Roase II</h3>
-          <p>Brand Refresh · Identity</p>
-        </div>
-        <span class="tag">2025</span>
-      </div>
-    </a>
-
+<!-- Case 02 — MEGA -->
+<section class="section showcase showcase--mega" id="mega" data-image="left" data-surface="warm" data-parallax data-parallax-invert aria-label="MEGA case study">
+  <div class="showcase__image"><div class="showcase__inner"></div></div>
+  <div class="showcase__copy" data-fade>
+    <div class="showcase__eyebrow">Case 02 · Consumer · Identity</div>
+    <h3 class="showcase__name">MEGA</h3>
+    <p class="showcase__line">A consumer brand built for scale — a visual system that ages with the product, not against it.</p>
+    <a href="#start" class="showcase__cta" data-cursor data-cursor-label="Read">Brand manual coming soon →</a>
   </div>
 </section>
 
-<!-- FEATURED CASE: MVIP -->
-<section class="featured reveal">
-  <div class="feat-grid">
-    <div class="feat-visual">
-      <img src="images/mvip.avif" alt="MVIP Industries case study">
-      <div class="stamp">/ MVIP · 2025</div>
-    </div>
-    <div class="feat-content">
-      <div class="label">Case Study · 01 / Industrial · Heritage</div>
-      <h3>We <em>Build</em> Trust.</h3>
-      <p>
-        For MVIP — a third-generation industrial group — we crafted a digital identity that holds the weight of legacy and the lift of what's next. A monogram drawn from forge marks. A typographic system rooted in engineering blueprints. A voice that earns belief, line by line.
-      </p>
-      <div class="feat-stats">
-        <div class="stat"><div class="n">142</div><div class="l">Identity Assets</div></div>
-        <div class="stat"><div class="n">38</div><div class="l">Page Manual</div></div>
-        <div class="stat"><div class="n">04</div><div class="l">Sub-brands</div></div>
-      </div>
-      <a class="more" href="https://designsandwords.in/brand1" target="_blank" rel="noopener" data-cursor>Explore Full Brand Manual <span style="font-size:18px">→</span></a>
-    </div>
+<!-- Case 03 — Ginni Devi Memorial Hospital -->
+<section class="section showcase showcase--ginni" id="ginni" data-image="right" data-surface="light" data-parallax aria-label="Ginni Devi Memorial Hospital case study">
+  <div class="showcase__image"><div class="showcase__inner"></div></div>
+  <div class="showcase__copy" data-fade>
+    <div class="showcase__eyebrow">Case 03 · Healthcare · Identity</div>
+    <h3 class="showcase__name">Ginni Devi Memorial Hospital</h3>
+    <p class="showcase__line">A hospital identity grounded in care. Orthopedic specialty, clinical clarity, a mark families remember.</p>
+    <a href="#start" class="showcase__cta" data-cursor data-cursor-label="Read">Brand manual coming soon →</a>
   </div>
 </section>
 
-<!-- CAPABILITIES -->
-<div class="section-head reveal" id="capabilities">
-  <div class="num">/ 02 — Capabilities</div>
-  <h2>Six things we do <em>obsessively</em> well.</h2>
-</div>
-
-<section class="caps">
-  <div class="caps-list">
-    <div class="cap" data-cursor><div class="n">01</div><h4>Brand <em>Strategy</em></h4><div class="deliv">Positioning · Audience · Voice · Architecture</div><div class="arrow">→</div></div>
-    <div class="cap" data-cursor><div class="n">02</div><h4>Visual <em>Identity</em></h4><div class="deliv">Logo systems · Typography · Color · Iconography</div><div class="arrow">→</div></div>
-    <div class="cap" data-cursor><div class="n">03</div><h4>Naming <em>&amp; Verbal</em></h4><div class="deliv">Naming · Tagline · Tone · Manifesto</div><div class="arrow">→</div></div>
-    <div class="cap" data-cursor><div class="n">04</div><h4>Editorial <em>&amp; Print</em></h4><div class="deliv">Manuals · Reports · Books · Packaging</div><div class="arrow">→</div></div>
-    <div class="cap" data-cursor><div class="n">05</div><h4>Digital <em>Presence</em></h4><div class="deliv">Websites · Decks · Social systems</div><div class="arrow">→</div></div>
-    <div class="cap" data-cursor><div class="n">06</div><h4>Motion <em>&amp; Story</em></h4><div class="deliv">Brand films · Title sequences · Launch campaigns</div><div class="arrow">→</div></div>
+<!-- Case 04 — Rajshree Marbles -->
+<section class="section showcase showcase--rajshree" id="rajshree" data-image="left" data-surface="warm" data-parallax data-parallax-invert aria-label="Rajshree Marbles case study">
+  <div class="showcase__image"><div class="showcase__inner"></div></div>
+  <div class="showcase__copy" data-fade>
+    <div class="showcase__eyebrow">Case 04 · Stone · Heritage</div>
+    <h3 class="showcase__name">Rajshree Marbles</h3>
+    <p class="showcase__line">Natural stone with quiet authority — provenance carved into the brand, presented like the material itself.</p>
+    <a href="#start" class="showcase__cta" data-cursor data-cursor-label="Read">Brand manual coming soon →</a>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process" id="process">
-  <div class="section-head" style="padding: 0; grid-template-columns: 1fr 2fr;">
-    <div class="num">/ 03 — How we work</div>
-    <h2>From listening to <em>launch</em>.</h2>
-  </div>
-  <div class="process-grid">
-    <div class="step"><div class="n">01</div><h5>Listen</h5><p>We start with conversations, not briefs. Founders, customers, the messy middle. Truth is the brief.</p></div>
-    <div class="step"><div class="n">02</div><h5>Frame</h5><p>Strategy that fits on one page. Positioning, principles, and the single sentence that aims everything.</p></div>
-    <div class="step"><div class="n">03</div><h5>Make</h5><p>Identity, voice, system. Drawn, written, refined. We bring three routes — never one safe option.</p></div>
-    <div class="step"><div class="n">04</div><h5>Ship</h5><p>Launch playbooks, manuals, and the team rituals to keep the brand alive long after we leave.</p></div>
+<!-- Case 05 — Roase -->
+<section class="section showcase showcase--roase" id="roase" data-image="right" data-surface="light" data-parallax aria-label="Roase case study">
+  <div class="showcase__image"><div class="showcase__inner"></div></div>
+  <div class="showcase__copy" data-fade>
+    <div class="showcase__eyebrow">Case 05 · Lifestyle · Identity</div>
+    <h3 class="showcase__name">Roase</h3>
+    <p class="showcase__line">A modern lifestyle brand with editorial confidence and unhurried presence.</p>
+    <a href="#start" class="showcase__cta" data-cursor data-cursor-label="Read">Brand manual coming soon →</a>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-band" id="contact">
-  <div class="lab">/ 04 — Let's, get in touch</div>
-  <h2>Have a brand<br><span class="outline">worth telling?</span><br><em>Tell us.</em></h2>
-  <a class="mailto" href="mailto:designs.words@gmail.com" data-cursor>designs.words@gmail.com <span class="arrow"></span></a>
+<!-- Case 06 — Roase II -->
+<section class="section showcase showcase--roase2" id="roase2" data-image="left" data-surface="warm" data-parallax data-parallax-invert aria-label="Roase II case study">
+  <div class="showcase__image"><div class="showcase__inner"></div></div>
+  <div class="showcase__copy" data-fade>
+    <div class="showcase__eyebrow">Case 06 · Brand Refresh · Identity</div>
+    <h3 class="showcase__name">Roase II</h3>
+    <p class="showcase__line">A brand refresh that holds the original voice and steps the visual forward.</p>
+    <a href="#start" class="showcase__cta" data-cursor data-cursor-label="Read">Brand manual coming soon →</a>
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- What is Branding — enormous title, tiny three-line list -->
+<section class="section" id="what" aria-label="What we do">
+  <div class="what">
+    <h2 class="what__title" data-fade>Branding.</h2>
+    <ul class="what__list" data-fade>
+      <li>Logo</li>
+      <li>Language</li>
+      <li>Visual identity</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Process — three rows, enormous numbers + tiny step labels -->
+<section class="section process" id="process" aria-label="Process">
+  <div class="process__row" data-fade>
+    <div class="process__num">01</div>
+    <div class="process__step">Discover</div>
+  </div>
+  <div class="process__row" data-fade>
+    <div class="process__num">02</div>
+    <div class="process__step">Define</div>
+  </div>
+  <div class="process__row" data-fade>
+    <div class="process__num">03</div>
+    <div class="process__step">Design</div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="cta-band" id="start">
+  <h2 class="cta-band__line" data-fade>Start a project.</h2>
+  <p class="cta-band__sub" data-fade>or write to <a href="mailto:designs.words@gmail.com" data-cursor>designs.words@gmail.com</a></p>
+</section>
+
+<!-- Footer -->
 <footer class="footer">
-  <div>
-    <div class="brand">Designs<em>&amp;</em>Words</div>
-    <p class="addr">E-16, Gokhle Marg,<br>C Scheme, Jaipur,<br>Rajasthan 302001 — IN</p>
-  </div>
-  <div>
-    <h6>Studio</h6>
-    <ul>
-      <li><a href="#work" data-cursor>Work</a></li>
-      <li><a href="#capabilities" data-cursor>Capabilities</a></li>
-      <li><a href="#process" data-cursor>Process</a></li>
-      <li><a href="#contact" data-cursor>Contact</a></li>
-    </ul>
-  </div>
-  <div>
-    <h6>Connect</h6>
-    <ul>
-      <li><a href="https://www.instagram.com/designs.words" target="_blank" rel="noopener" data-cursor>Instagram</a></li>
-      <li><a data-cursor>Behance</a></li>
-      <li><a data-cursor>LinkedIn</a></li>
-      <li><a data-cursor>Dribbble</a></li>
-    </ul>
-  </div>
-  <div>
-    <h6>Index</h6>
-    <ul>
-      <li><a data-cursor>Influencer Magic</a></li>
-      <li><a data-cursor>Content Spark</a></li>
-      <li><a data-cursor>Web Wizardry</a></li>
-      <li><a data-cursor>Branding Boost</a></li>
-    </ul>
-  </div>
-  <div class="copy">
-    <span>© 2026 Designs &amp; Words. All rights reserved.</span>
-    <span>Crafted in Jaipur · ✦</span>
-  </div>
+  <a href="#top" class="footer__brand" data-cursor>Designs&amp;Words</a>
+  <span>E-16, Gokhle Marg, C Scheme, Jaipur 302001</span>
+  <a href="https://www.instagram.com/designs.words" data-cursor target="_blank" rel="noopener">Instagram</a>
+  <span>© 2026</span>
 </footer>
 
 </body>
