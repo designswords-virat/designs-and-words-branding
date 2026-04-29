@@ -233,3 +233,41 @@
   }, 2400);
   el.style.transition = 'opacity 320ms ease';
 })();
+
+// ---------- Motion clips — play/pause on click, autoplay on scroll ----------
+(function () {
+  var clips = document.querySelectorAll('.motion-clip');
+  if (!clips.length) return;
+
+  // IntersectionObserver: load + play when in view, pause when out
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var video = entry.target.querySelector('video');
+      if (!video) return;
+      if (entry.isIntersecting) {
+        video.load();
+        video.play().catch(function () {});
+        entry.target.classList.add('is-playing');
+      } else {
+        video.pause();
+        entry.target.classList.remove('is-playing');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  clips.forEach(function (clip) {
+    io.observe(clip);
+    var btn = clip.querySelector('.motion-clip__play');
+    var video = clip.querySelector('video');
+    if (!btn || !video) return;
+    clip.addEventListener('click', function () {
+      if (video.paused) {
+        video.play().catch(function () {});
+        clip.classList.add('is-playing');
+      } else {
+        video.pause();
+        clip.classList.remove('is-playing');
+      }
+    });
+  });
+})();
