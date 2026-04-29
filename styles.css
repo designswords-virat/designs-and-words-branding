@@ -336,13 +336,9 @@ body.menu-open { overflow: hidden; }
   will-change: transform;
 }
 
-/* Per-case backgrounds */
+/* Per-case backgrounds (single-image cases only) */
 .showcase--mvip      .showcase__inner { background-image: url("images/mvip.avif"); }
 .showcase--mega      .showcase__inner { background-image: url("images/mega.avif"); }
-.showcase--ginni     .showcase__inner { background-image: url("images/ginni-devi.webp"); background-color: #F4EFE3; background-size: contain; background-repeat: no-repeat; }
-.showcase--rajshree  .showcase__inner { background-image: url("images/rajshree-marbles.webp"); }
-.showcase--roase     .showcase__inner { background-image: url("images/roase.jpeg"); }
-.showcase--roase2    .showcase__inner { background-image: url("images/roase2.jpeg"); }
 
 /* Image left/right via data attribute (no per-case modifier needed) */
 .showcase[data-image="right"] .showcase__image { order: 2; }
@@ -397,6 +393,128 @@ body.menu-open { overflow: hidden; }
   .showcase { grid-template-columns: 1fr; min-height: auto; }
   .showcase__image { min-height: 60vh; order: 1 !important; }
   .showcase__copy  { padding: 56px 24px; gap: 24px; order: 2 !important; }
+}
+
+/* ---------- Multi-image case: scroll-driven horizontal carousel ---------- */
+/* Vertical scroll within this section translates the inner track horizontally.
+   Section is tall (--slides * scroll-distance). Inner pin is sticky 100vh. */
+.case-multi {
+  position: relative;
+  height: calc(var(--slides, 2) * 70vh);
+}
+.case-multi__pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.case-multi__track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+.case-multi__slide {
+  flex: 0 0 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.case-multi__slide--title {
+  background: var(--bg);
+  padding: 96px 80px;
+  text-align: left;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.case-multi[data-surface="warm"] .case-multi__slide--title { background: var(--surface-warm); }
+.case-multi__title-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 720px;
+}
+.case-multi__eyebrow {
+  font-size: var(--tiny);
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.case-multi__name {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(80px, 12vw, 200px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+.case-multi__line {
+  font-size: var(--tiny);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.55;
+  text-transform: none;
+  max-width: 36ch;
+  opacity: 0.75;
+}
+.case-multi__progress {
+  position: absolute;
+  bottom: 32px;
+  left: 80px;
+  font-size: var(--tiny);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.case-multi__slide--image {
+  background: var(--bg);
+}
+.case-multi__slide--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Per-case visual treatment for image slides */
+.case-multi--ginni .case-multi__slide--image { background: var(--surface-warm); }
+.case-multi--ginni .case-multi__slide--image img { object-fit: contain; padding: 8vh 8vw; }
+.case-multi--rajshree .case-multi__slide--image { background: var(--bg); }
+.case-multi--rajshree .case-multi__slide--image img { object-fit: contain; padding: 4vh 4vw; }
+.case-multi--roase .case-multi__slide--image,
+.case-multi--roase2 .case-multi__slide--image { background: var(--surface-deep); }
+.case-multi--roase .case-multi__slide--image img,
+.case-multi--roase2 .case-multi__slide--image img { object-fit: contain; padding: 6vh 4vw; }
+
+/* Slide counter on each image slide */
+.case-multi__slide--image::after {
+  content: attr(data-slide-num);
+  position: absolute;
+  bottom: 32px;
+  right: 80px;
+  font-family: var(--sans);
+  font-size: var(--tiny);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  color: var(--text-inverse);
+}
+
+@media (max-width: 768px) {
+  /* Mobile: ditch the pin, stack slides vertically */
+  .case-multi { height: auto; }
+  .case-multi__pin { position: relative; height: auto; overflow: visible; }
+  .case-multi__track { flex-direction: column; height: auto; transform: none !important; }
+  .case-multi__slide { flex: 1 0 auto; height: 70vh; min-height: 480px; }
+  .case-multi__slide--title { padding: 72px 24px; height: auto; min-height: 60vh; }
+  .case-multi__title-inner { gap: 24px; }
+  .case-multi__progress { left: 24px; bottom: 24px; }
+  .case-multi__slide--image::after { right: 24px; bottom: 24px; }
 }
 
 /* ---------- What is Branding ---------- */
@@ -562,4 +680,9 @@ html.lenis, html.lenis body { height: auto; }
   .hero__sub { opacity: 0.7; transform: none; }
   .hero__scroll { opacity: 0.5; transform: none; }
   .showcase__inner { transform: none !important; }
+  .case-multi__track { transform: none !important; }
+  .case-multi { height: auto; }
+  .case-multi__pin { position: relative; height: auto; }
+  .case-multi__track { flex-direction: column; height: auto; }
+  .case-multi__slide { flex: 1 0 auto; height: 70vh; }
 }

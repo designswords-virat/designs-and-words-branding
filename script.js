@@ -89,6 +89,56 @@
   tick();
 })();
 
+// ---------- Multi-image case carousel: vertical scroll → horizontal track translation ----------
+// For each .case-multi, the section is tall (--slides * 70vh). The .case-multi__pin
+// is sticky 100vh inside it. As the user scrolls vertically through the section,
+// we translate the .case-multi__track horizontally so each slide flows past.
+// Disabled on mobile (CSS stacks slides vertically instead) and reduced-motion.
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function isMobile() { return window.matchMedia('(max-width: 768px)').matches; }
+  var carousels = [];
+  document.querySelectorAll('.case-multi').forEach(function (section) {
+    var track = section.querySelector('.case-multi__track');
+    if (!track) return;
+    carousels.push({ section: section, track: track });
+  });
+  if (!carousels.length) return;
+  var vh = window.innerHeight;
+  var vw = window.innerWidth;
+  window.addEventListener('resize', function () {
+    vh = window.innerHeight;
+    vw = window.innerWidth;
+  }, { passive: true });
+
+  function tick() {
+    if (isMobile()) {
+      // Mobile: clear any inline transform, CSS handles vertical stack
+      carousels.forEach(function (c) { c.track.style.transform = ''; });
+      requestAnimationFrame(tick);
+      return;
+    }
+    carousels.forEach(function (c) {
+      var rect = c.section.getBoundingClientRect();
+      // Skip when section is far above or below viewport
+      if (rect.bottom < -200 || rect.top > vh + 200) return;
+      // Section's full scrollable distance = section height - viewport height
+      var scrollableDistance = c.section.offsetHeight - vh;
+      if (scrollableDistance <= 0) return;
+      // How far we've scrolled INTO the section (clamped 0..1)
+      var scrolled = -rect.top;
+      var progress = Math.max(0, Math.min(1, scrolled / scrollableDistance));
+      // Track is wider than viewport — translate by (track_width - vw) * progress
+      var maxTranslate = c.track.scrollWidth - vw;
+      if (maxTranslate <= 0) return;
+      var translate = progress * maxTranslate;
+      c.track.style.transform = 'translate3d(' + (-translate).toFixed(2) + 'px,0,0)';
+    });
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
 // ---------- Custom cursor (desktop only) ----------
 (function () {
   if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
