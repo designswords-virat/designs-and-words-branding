@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Designs&Words — Branding. Where strategy meets visual identity. From logo to language, we shape how your audience feels your story.">
-<meta property="og:title" content="Designs&Words — Branding">
-<meta property="og:description" content="Where strategy meets visual identity. From logo to language, we shape how your audience feels your story.">
+<meta name="description" content="Designs&Words — A Jaipur-based branding studio. Selected work in identity, story, and visual systems.">
+<meta property="og:title" content="Designs&Words — Branding studio">
+<meta property="og:description" content="A Jaipur-based branding studio. Selected work in identity, story, and visual systems.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/mvip.avif">
-<meta name="theme-color" content="#0E0E10">
-<title>Branding — Designs&amp;Words</title>
+<meta name="theme-color" content="#FFFFFF">
+<title>Designs&amp;Words — Branding studio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
@@ -21,27 +21,25 @@
 </head>
 <body>
 
-<!-- Loader: DESIGNS slides in from left, & pops, WORDS slides in from right -->
+<!-- Loader: Designs&Words wordmark fades in letter by letter -->
 <div class="loader" id="loader" role="status" aria-label="Loading">
   <div class="loader-mark" aria-label="Designs and Words">
-    <div class="loader-mark__word loader-mark__word--left">
-      <span style="--i:1">D</span><span style="--i:2">E</span><span style="--i:3">S</span><span style="--i:4">I</span><span style="--i:5">G</span><span style="--i:6">N</span><span style="--i:7">S</span>
-    </div>
-    <div class="loader-mark__amp">&amp;</div>
-    <div class="loader-mark__word">
-      <span style="--i:1">W</span><span style="--i:2">O</span><span style="--i:3">R</span><span style="--i:4">D</span><span style="--i:5">S</span>
-    </div>
+    <span style="--i:1">D</span><span style="--i:2">e</span><span style="--i:3">s</span><span style="--i:4">i</span><span style="--i:5">g</span><span style="--i:6">n</span><span style="--i:7">s</span><span class="amp" style="--i:8">&amp;</span><span style="--i:9">W</span><span style="--i:10">o</span><span style="--i:11">r</span><span style="--i:12">d</span><span style="--i:13">s</span>
   </div>
 </div>
 
-<!-- Custom cursor (desktop only) -->
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-<div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel">View</span></div>
+<!-- Cursor (desktop) -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 
-<!-- Nav -->
+<!-- NAV -->
 <nav class="nav">
-  <a href="#top" class="nav__brand" data-cursor>D&amp;W</a>
-  <a href="#start" class="nav__cta" data-cursor data-cursor-label="Start">Start a project →</a>
+  <a href="#top" class="nav__brand" data-cursor>Designs<em>&amp;</em>Words</a>
+  <ul class="nav__links">
+    <li><a href="#work" data-cursor>Work</a></li>
+    <li><a href="#about" data-cursor>About</a></li>
+    <li><a href="#contact" data-cursor>Contact</a></li>
+    <li><a href="https://www.instagram.com/designs.words" target="_blank" rel="noopener" data-cursor>Instagram</a></li>
+  </ul>
   <button class="nav__hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span>
   </button>
@@ -49,178 +47,137 @@
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <ul class="mobile-menu__links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#what">Branding</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#start">Contact</a></li>
-  </ul>
-  <a href="#start" class="mobile-menu__cta">Start a project →</a>
+  <a href="#work">Work</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="https://www.instagram.com/designs.words" target="_blank" rel="noopener">Instagram</a>
 </div>
 
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero" id="top">
-  <h1 class="hero__headline">Where strategy meets visual identity.</h1>
-  <p class="hero__sub tiny--lower">From logo to language, we shape how your audience feels your story.</p>
-  <a href="#work" class="hero__scroll" data-cursor>Scroll ↓</a>
+  <h1 class="hero__line" data-fade>
+    A Jaipur-based studio crafting <em data-rotator>brand</em> identities that carry weight.
+  </h1>
 </section>
 
-<!-- Selected work header -->
-<section class="work-intro" id="work">
-  <h2 class="work-intro__title" data-fade>Selected work.</h2>
-  <p class="work-intro__sub tiny--lower" data-fade>Six cases. Same discipline.</p>
-</section>
-
-<!-- Case 01 — MVIP -->
-<section class="section showcase showcase--mvip" id="mvip" data-image="right" data-surface="light" data-parallax aria-label="MVIP case study">
-  <div class="showcase__image"><div class="showcase__inner"></div></div>
-  <div class="showcase__copy" data-fade>
-    <div class="showcase__eyebrow">Case 01 · Industrial · Heritage</div>
-    <h3 class="showcase__name">MVIP</h3>
-    <p class="showcase__line">A digital identity designed to reflect decades of industrial excellence and forward-looking vision.</p>
-    <a href="https://designsandwords.in/brand1" class="showcase__cta" data-cursor data-cursor-label="Read" target="_blank" rel="noopener">Explore the full brand manual →</a>
+<!-- FILTERS — Discipline (single, fixed for the branding page) + Sector (clickable, filters the grid) -->
+<div class="filters" id="work" data-fade>
+  <div class="filters__group">
+    <span class="filters__label">Discipline</span>
+    <button class="filter-pill is-active">Branding</button>
   </div>
-</section>
-
-<!-- Case 02 — MEGA -->
-<section class="section showcase showcase--mega" id="mega" data-image="left" data-surface="warm" data-parallax data-parallax-invert aria-label="MEGA case study">
-  <div class="showcase__image"><div class="showcase__inner"></div></div>
-  <div class="showcase__copy" data-fade>
-    <div class="showcase__eyebrow">Case 02 · Consumer · Identity</div>
-    <h3 class="showcase__name">MEGA</h3>
-    <p class="showcase__line">A consumer brand built for scale — a visual system that ages with the product, not against it.</p>
-    <a href="#start" class="showcase__cta" data-cursor data-cursor-label="Read">Brand manual coming soon →</a>
+  <div class="filters__divider"></div>
+  <div class="filters__group" id="sectorFilters">
+    <span class="filters__label">Sector</span>
+    <button class="filter-pill is-active" data-sector="all">All</button>
+    <button class="filter-pill" data-sector="industrial">Industrial</button>
+    <button class="filter-pill" data-sector="consumer">Consumer</button>
+    <button class="filter-pill" data-sector="healthcare">Healthcare</button>
+    <button class="filter-pill" data-sector="stone">Stone</button>
+    <button class="filter-pill" data-sector="lifestyle">Lifestyle</button>
   </div>
-</section>
+</div>
 
-<!-- Case 03 — Ginni Devi Memorial Hospital (CAROUSEL: 6 logo variants) -->
-<section class="case-multi case-multi--ginni" id="ginni" data-surface="light" style="--slides: 7;" aria-label="Ginni Devi Memorial Hospital case study">
-  <div class="case-multi__pin">
-    <div class="case-multi__track">
-      <div class="case-multi__slide case-multi__slide--title">
-        <div class="case-multi__title-inner">
-          <div class="case-multi__eyebrow">Case 03 · Healthcare · Identity</div>
-          <h3 class="case-multi__name">Ginni Devi Memorial Hospital</h3>
-          <p class="case-multi__line">A hospital identity grounded in care. Orthopedic specialty, clinical clarity, a mark families remember.</p>
-        </div>
-        <div class="case-multi__progress">Scroll → 6 marks</div>
-      </div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="01 / 06"><img src="images/ginni-devi-1.webp" alt="Ginni Devi Memorial Hospital logo variant 1" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="02 / 06"><img src="images/ginni-devi-2.webp" alt="Ginni Devi Memorial Hospital logo variant 2" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="03 / 06"><img src="images/ginni-devi-3.webp" alt="Ginni Devi Memorial Hospital logo variant 3" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="04 / 06"><img src="images/ginni-devi-4.webp" alt="Ginni Devi Memorial Hospital logo variant 4" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="05 / 06"><img src="images/ginni-devi-5.webp" alt="Ginni Devi Memorial Hospital logo variant 5" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="06 / 06"><img src="images/ginni-devi-6.webp" alt="Ginni Devi Memorial Hospital logo variant 6" loading="lazy"></div>
+<!-- WORK GRID -->
+<section class="work" aria-label="Selected work">
+
+  <!-- 01 MVIP -->
+  <a class="tile tile--mvip" data-cursor data-sector="industrial">
+    <div class="tile__image">
+      <img src="images/mvip.avif" alt="MVIP Industries" loading="lazy">
     </div>
-  </div>
-</section>
-
-<!-- Case 04 — Rajshree Marbles (CAROUSEL: 5 presentation slides) -->
-<section class="case-multi case-multi--rajshree" id="rajshree" data-surface="warm" style="--slides: 6;" aria-label="Rajshree Marbles case study">
-  <div class="case-multi__pin">
-    <div class="case-multi__track">
-      <div class="case-multi__slide case-multi__slide--title">
-        <div class="case-multi__title-inner">
-          <div class="case-multi__eyebrow">Case 04 · Stone · Heritage</div>
-          <h3 class="case-multi__name">Rajshree Marbles</h3>
-          <p class="case-multi__line">Natural stone with quiet authority — provenance carved into the brand, presented like the material itself.</p>
-        </div>
-        <div class="case-multi__progress">Scroll → 5 frames</div>
-      </div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="01 / 05"><img src="images/rajshree-1.webp" alt="Rajshree Marbles brand frame 1" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="02 / 05"><img src="images/rajshree-2.webp" alt="Rajshree Marbles brand frame 2" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="03 / 05"><img src="images/rajshree-3.webp" alt="Rajshree Marbles brand frame 3" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="04 / 05"><img src="images/rajshree-4.webp" alt="Rajshree Marbles brand frame 4" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="05 / 05"><img src="images/rajshree-5.webp" alt="Rajshree Marbles brand frame 5" loading="lazy"></div>
+    <h3 class="tile__name">MVIP Industries</h3>
+    <div class="tile__meta">
+      <span class="tile__discipline">Identity · Brand Manual · Web</span>
+      <span class="tile__year">2025</span>
     </div>
-  </div>
-</section>
+  </a>
 
-<!-- Case 05 — Roase (CAROUSEL: 8 frames) -->
-<section class="case-multi case-multi--roase" id="roase" data-surface="light" style="--slides: 9;" aria-label="Roase case study">
-  <div class="case-multi__pin">
-    <div class="case-multi__track">
-      <div class="case-multi__slide case-multi__slide--title">
-        <div class="case-multi__title-inner">
-          <div class="case-multi__eyebrow">Case 05 · Lifestyle · Identity</div>
-          <h3 class="case-multi__name">Roase</h3>
-          <p class="case-multi__line">A modern lifestyle brand with editorial confidence and unhurried presence.</p>
-        </div>
-        <div class="case-multi__progress">Scroll → 8 frames</div>
-      </div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="01 / 08"><img src="images/roase-1.jpeg" alt="Roase frame 1" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="02 / 08"><img src="images/roase-2.jpeg" alt="Roase frame 2" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="03 / 08"><img src="images/roase-3.jpeg" alt="Roase frame 3" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="04 / 08"><img src="images/roase-4.jpeg" alt="Roase frame 4" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="05 / 08"><img src="images/roase-5.jpeg" alt="Roase frame 5" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="06 / 08"><img src="images/roase-6.jpeg" alt="Roase frame 6" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="07 / 08"><img src="images/roase-7.jpeg" alt="Roase frame 7" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="08 / 08"><img src="images/roase-8.jpeg" alt="Roase frame 8" loading="lazy"></div>
+  <!-- 02 MEGA -->
+  <a class="tile tile--mega" data-cursor data-sector="consumer">
+    <div class="tile__image">
+      <img src="images/mega.avif" alt="MEGA" loading="lazy">
     </div>
-  </div>
-</section>
-
-<!-- Case 06 — Roase II (CAROUSEL: 6 frames) -->
-<section class="case-multi case-multi--roase2" id="roase2" data-surface="warm" style="--slides: 7;" aria-label="Roase II case study">
-  <div class="case-multi__pin">
-    <div class="case-multi__track">
-      <div class="case-multi__slide case-multi__slide--title">
-        <div class="case-multi__title-inner">
-          <div class="case-multi__eyebrow">Case 06 · Brand Refresh · Identity</div>
-          <h3 class="case-multi__name">Roase II</h3>
-          <p class="case-multi__line">A brand refresh that holds the original voice and steps the visual forward.</p>
-        </div>
-        <div class="case-multi__progress">Scroll → 6 frames</div>
-      </div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="01 / 06"><img src="images/roase2-1.jpeg" alt="Roase II frame 1" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="02 / 06"><img src="images/roase2-2.jpeg" alt="Roase II frame 2" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="03 / 06"><img src="images/roase2-3.jpeg" alt="Roase II frame 3" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="04 / 06"><img src="images/roase2-4.jpeg" alt="Roase II frame 4" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="05 / 06"><img src="images/roase2-5.jpeg" alt="Roase II frame 5" loading="lazy"></div>
-      <div class="case-multi__slide case-multi__slide--image" data-slide-num="06 / 06"><img src="images/roase2-6.jpeg" alt="Roase II frame 6" loading="lazy"></div>
+    <h3 class="tile__name">MEGA</h3>
+    <div class="tile__meta">
+      <span class="tile__discipline">Consumer · Identity</span>
+      <span class="tile__year">2025</span>
     </div>
+  </a>
+
+  <!-- 03 Ginni Devi -->
+  <a class="tile tile--ginni" data-cursor data-sector="healthcare">
+    <div class="tile__image">
+      <img src="images/ginni-devi-1.webp" alt="Ginni Devi Memorial Hospital" loading="lazy">
+    </div>
+    <h3 class="tile__name">Ginni Devi Memorial Hospital</h3>
+    <div class="tile__meta">
+      <span class="tile__discipline">Healthcare · Logo · Identity</span>
+      <span class="tile__year">2025</span>
+    </div>
+  </a>
+
+  <!-- 04 Rajshree Marbles -->
+  <a class="tile tile--rajshree" data-cursor data-sector="stone">
+    <div class="tile__image">
+      <img src="images/rajshree-1.webp" alt="Rajshree Marbles" loading="lazy">
+    </div>
+    <h3 class="tile__name">Rajshree Marbles</h3>
+    <div class="tile__meta">
+      <span class="tile__discipline">Stone · Brand · Catalog</span>
+      <span class="tile__year">2024</span>
+    </div>
+  </a>
+
+  <!-- 05 Roase -->
+  <a class="tile tile--roase" data-cursor data-sector="lifestyle">
+    <div class="tile__image">
+      <img src="images/roase-1.jpeg" alt="Roase" loading="lazy">
+    </div>
+    <h3 class="tile__name">Roase</h3>
+    <div class="tile__meta">
+      <span class="tile__discipline">Lifestyle · Identity · Story</span>
+      <span class="tile__year">2024</span>
+    </div>
+  </a>
+
+  <!-- 06 Roase II -->
+  <a class="tile tile--roase2" data-cursor data-sector="lifestyle">
+    <div class="tile__image">
+      <img src="images/roase2-1.jpeg" alt="Roase II" loading="lazy">
+    </div>
+    <h3 class="tile__name">Roase II</h3>
+    <div class="tile__meta">
+      <span class="tile__discipline">Brand Refresh · Identity</span>
+      <span class="tile__year">2025</span>
+    </div>
+  </a>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about__label" data-fade>About</div>
+  <div class="about__copy" data-fade>
+    <p>Designs &amp; Words is a Jaipur-based branding studio. We build <em>identities</em> for ambitious brands across industrial, healthcare, consumer, and lifestyle.</p>
+    <p>From logo to language — we shape how your audience <em>feels</em> your story.</p>
   </div>
 </section>
 
-<!-- What is Branding — enormous title, tiny three-line list -->
-<section class="section" id="what" aria-label="What we do">
-  <div class="what">
-    <h2 class="what__title" data-fade>Branding.</h2>
-    <ul class="what__list" data-fade>
-      <li>Logo</li>
-      <li>Language</li>
-      <li>Visual identity</li>
-    </ul>
-  </div>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2 class="contact__line" data-fade>Have a brand <em>worth telling?</em></h2>
+  <a href="mailto:designs.words@gmail.com" class="contact__email" data-cursor>designs.words@gmail.com →</a>
 </section>
 
-<!-- Process — three rows, enormous numbers + tiny step labels -->
-<section class="section process" id="process" aria-label="Process">
-  <div class="process__row" data-fade>
-    <div class="process__num">01</div>
-    <div class="process__step">Discover</div>
-  </div>
-  <div class="process__row" data-fade>
-    <div class="process__num">02</div>
-    <div class="process__step">Define</div>
-  </div>
-  <div class="process__row" data-fade>
-    <div class="process__num">03</div>
-    <div class="process__step">Design</div>
-  </div>
-</section>
-
-<!-- CTA band -->
-<section class="cta-band" id="start">
-  <h2 class="cta-band__line" data-fade>Start a project.</h2>
-  <p class="cta-band__sub" data-fade>or write to <a href="mailto:designs.words@gmail.com" data-cursor>designs.words@gmail.com</a></p>
-</section>
-
-<!-- Footer -->
+<!-- FOOTER -->
 <footer class="footer">
-  <a href="#top" class="footer__brand" data-cursor>Designs&amp;Words</a>
-  <span>E-16, Gokhle Marg, C Scheme, Jaipur 302001</span>
-  <a href="https://www.instagram.com/designs.words" data-cursor target="_blank" rel="noopener">Instagram</a>
+  <span class="footer__brand">Designs<em>&amp;</em>Words</span>
+  <span>E-16, Gokhle Marg, C Scheme, Jaipur 302001 — IN</span>
+  <div class="footer__links">
+    <a href="https://www.instagram.com/designs.words" target="_blank" rel="noopener" data-cursor>Instagram</a>
+    <a href="mailto:designs.words@gmail.com" data-cursor>Email</a>
+  </div>
   <span>© 2026</span>
 </footer>
 
