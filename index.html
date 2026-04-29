@@ -33,10 +33,11 @@
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="#top" class="nav__brand" data-cursor aria-label="Designs & Words — home">
+  <a href="https://designsandwords.in/" class="nav__brand" data-cursor target="_blank" rel="noopener" aria-label="Designs & Words — designsandwords.in">
     <img src="images/logo.png" alt="Designs & Words">
   </a>
   <ul class="nav__links">
+    <li><a href="#top" data-cursor>Home</a></li>
     <li><a href="#work" data-cursor>Work</a></li>
     <li><a href="#about" data-cursor>About</a></li>
     <li><a href="#contact" data-cursor>Contact</a></li>
@@ -49,6 +50,7 @@
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#top">Home</a>
   <a href="#work">Work</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
@@ -81,10 +83,10 @@
   </div>
 </div>
 
-<!-- WORK GRID -->
+<!-- WORK GRID — order per user: Rajshree, Ditya, Roase, Roase II, Ginni Devi, MVIP, MEGA -->
 <section class="work" aria-label="Selected work">
 
-  <!-- 01 Rajshree Marbles (now first per user request) -->
+  <!-- 01 Rajshree Marbles -->
   <a class="tile tile--rajshree" href="projects/rajshree.html" data-cursor data-sector="stone">
     <div class="tile__image">
       <img src="images/rajshree-1.webp" alt="Rajshree Marbles" loading="lazy">
@@ -96,46 +98,22 @@
     </div>
   </a>
 
-  <!-- 02 MVIP -->
-  <a class="tile tile--mvip" href="projects/mvip.html" data-cursor data-sector="industrial">
+  <!-- 02 Ditya Infra -->
+  <a class="tile tile--ditya" href="projects/ditya.html" data-cursor data-sector="infrastructure">
     <div class="tile__image">
-      <img src="images/mvip.avif" alt="MVIP Industries" loading="lazy">
+      <img src="images/ditya-1.jpeg" alt="Ditya Infra" loading="lazy">
     </div>
-    <h3 class="tile__name">MVIP Industries</h3>
+    <h3 class="tile__name">Ditya Infra</h3>
     <div class="tile__meta">
-      <span class="tile__discipline">Identity · Brand Manual · Web</span>
+      <span class="tile__discipline">Infrastructure · Identity</span>
       <span class="tile__year">2025</span>
     </div>
   </a>
 
-  <!-- 03 MEGA -->
-  <a class="tile tile--mega" href="projects/mega.html" data-cursor data-sector="consumer">
-    <div class="tile__image">
-      <img src="images/mega.avif" alt="MEGA" loading="lazy">
-    </div>
-    <h3 class="tile__name">MEGA</h3>
-    <div class="tile__meta">
-      <span class="tile__discipline">Consumer · Identity</span>
-      <span class="tile__year">2025</span>
-    </div>
-  </a>
-
-  <!-- 04 Ginni Devi -->
-  <a class="tile tile--ginni" href="projects/ginni-devi.html" data-cursor data-sector="healthcare">
-    <div class="tile__image">
-      <img src="images/ginni-devi-1.webp" alt="Ginni Devi Memorial Hospital" loading="lazy">
-    </div>
-    <h3 class="tile__name">Ginni Devi Memorial Hospital</h3>
-    <div class="tile__meta">
-      <span class="tile__discipline">Healthcare · Logo · Identity</span>
-      <span class="tile__year">2025</span>
-    </div>
-  </a>
-
-  <!-- 05 Roase -->
+  <!-- 03 Roase (thumbnail = roase-2 per user request) -->
   <a class="tile tile--roase" href="projects/roase.html" data-cursor data-sector="lifestyle">
     <div class="tile__image">
-      <img src="images/roase-1.jpeg" alt="Roase" loading="lazy">
+      <img src="images/roase-2.jpeg" alt="Roase" loading="lazy">
     </div>
     <h3 class="tile__name">Roase</h3>
     <div class="tile__meta">
@@ -144,7 +122,7 @@
     </div>
   </a>
 
-  <!-- 06 Roase II -->
+  <!-- 04 Roase II -->
   <a class="tile tile--roase2" href="projects/roase2.html" data-cursor data-sector="lifestyle">
     <div class="tile__image">
       <img src="images/roase2-1.jpeg" alt="Roase II" loading="lazy">
@@ -156,14 +134,38 @@
     </div>
   </a>
 
-  <!-- 07 Ditya Infra -->
-  <a class="tile tile--ditya" href="projects/ditya.html" data-cursor data-sector="infrastructure">
+  <!-- 05 Ginni Devi -->
+  <a class="tile tile--ginni" href="projects/ginni-devi.html" data-cursor data-sector="healthcare">
     <div class="tile__image">
-      <img src="images/ditya-1.jpeg" alt="Ditya Infra" loading="lazy">
+      <img src="images/ginni-devi-1.webp" alt="Ginni Devi Memorial Hospital" loading="lazy">
     </div>
-    <h3 class="tile__name">Ditya Infra</h3>
+    <h3 class="tile__name">Ginni Devi Memorial Hospital</h3>
     <div class="tile__meta">
-      <span class="tile__discipline">Infrastructure · Identity</span>
+      <span class="tile__discipline">Healthcare · Logo · Identity</span>
+      <span class="tile__year">2025</span>
+    </div>
+  </a>
+
+  <!-- 06 MVIP -->
+  <a class="tile tile--mvip" href="projects/mvip.html" data-cursor data-sector="industrial">
+    <div class="tile__image">
+      <img src="images/mvip.avif" alt="MVIP Industries" loading="lazy">
+    </div>
+    <h3 class="tile__name">MVIP Industries</h3>
+    <div class="tile__meta">
+      <span class="tile__discipline">Identity · Brand Manual · Web</span>
+      <span class="tile__year">2025</span>
+    </div>
+  </a>
+
+  <!-- 07 MEGA -->
+  <a class="tile tile--mega" href="projects/mega.html" data-cursor data-sector="consumer">
+    <div class="tile__image">
+      <img src="images/mega.avif" alt="MEGA" loading="lazy">
+    </div>
+    <h3 class="tile__name">MEGA</h3>
+    <div class="tile__meta">
+      <span class="tile__discipline">Consumer · Identity</span>
       <span class="tile__year">2025</span>
     </div>
   </a>
@@ -187,7 +189,7 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <span class="footer__brand"><img src="images/logo.png" alt="Designs & Words"></span>
+  <a href="https://designsandwords.in/" class="footer__brand" data-cursor target="_blank" rel="noopener" aria-label="Designs & Words — designsandwords.in"><img src="images/logo.png" alt="Designs & Words"></a>
   <span>E-16, Gokhle Marg, C Scheme, Jaipur 302001 — IN</span>
   <div class="footer__links">
     <a href="https://www.instagram.com/designs.words" target="_blank" rel="noopener" data-cursor>Instagram</a>

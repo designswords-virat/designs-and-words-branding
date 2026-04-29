@@ -490,6 +490,59 @@ body.menu-open { overflow: hidden; }
 .detail-image--slide { background: var(--surface); }
 /* --photo, --wide, --tall use the default (no extra rule) */
 
+/* Rajshree-only — scroll-driven horizontal carousel, no gaps between images. */
+.rajshree-carousel {
+  position: relative;
+  height: calc(var(--slides, 1) * 80vh);
+  width: 100%;
+}
+.rajshree-carousel__pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--surface);
+}
+.rajshree-carousel__track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+.rajshree-carousel__slide {
+  flex: 0 0 100vw;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.rajshree-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.rajshree-carousel__progress {
+  position: absolute;
+  bottom: 24px;
+  left: var(--pad);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .rajshree-carousel { height: auto; }
+  .rajshree-carousel__pin { position: relative; height: auto; overflow: visible; }
+  .rajshree-carousel__track { flex-direction: column; height: auto; transform: none !important; }
+  .rajshree-carousel__slide { flex: 1 0 auto; height: 70vh; min-height: 480px; }
+  .rajshree-carousel__progress { display: none; }
+}
+
 /* CAPPED variants (MVIP / MEGA) — square brand-mark assets render at natural
    width with max-height ceiling, centered, no parallax (no overflow needed).
    These OVERRIDE the default full-width treatment. */

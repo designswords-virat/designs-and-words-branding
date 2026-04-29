@@ -165,6 +165,57 @@
   tick();
 })();
 
+// ---------- Rajshree horizontal carousel ----------
+// Vertical scroll inside the section translates the .rajshree-carousel__track
+// horizontally — images flow continuously, no gaps. Skipped on mobile (CSS
+// stacks slides vertically) and reduced-motion.
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function isMobile() { return window.matchMedia('(max-width: 768px)').matches; }
+  var section = document.querySelector('[data-rajshree-carousel]');
+  if (!section) return;
+  var track = section.querySelector('.rajshree-carousel__track');
+  var progress = section.querySelector('#rajshreeProgress');
+  if (!track) return;
+  var slideCount = section.querySelectorAll('.rajshree-carousel__slide').length;
+  var vh = window.innerHeight, vw = window.innerWidth;
+  window.addEventListener('resize', function () {
+    vh = window.innerHeight;
+    vw = window.innerWidth;
+  }, { passive: true });
+
+  function tick() {
+    if (isMobile()) {
+      track.style.transform = '';
+      requestAnimationFrame(tick);
+      return;
+    }
+    var rect = section.getBoundingClientRect();
+    if (rect.bottom < -200 || rect.top > vh + 200) {
+      requestAnimationFrame(tick);
+      return;
+    }
+    var scrollableDistance = section.offsetHeight - vh;
+    if (scrollableDistance <= 0) {
+      requestAnimationFrame(tick);
+      return;
+    }
+    var scrolled = -rect.top;
+    var p = Math.max(0, Math.min(1, scrolled / scrollableDistance));
+    var maxTranslate = track.scrollWidth - vw;
+    if (maxTranslate > 0) {
+      track.style.transform = 'translate3d(' + (-p * maxTranslate).toFixed(2) + 'px,0,0)';
+    }
+    if (progress && slideCount > 1) {
+      var current = Math.min(slideCount, Math.floor(p * slideCount) + 1);
+      var pad = function (n) { return n < 10 ? '0' + n : '' + n; };
+      progress.textContent = pad(current) + ' / ' + pad(slideCount);
+    }
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
 // ---------- Hero word rotator ----------
 (function () {
   var el = document.querySelector('[data-rotator]');

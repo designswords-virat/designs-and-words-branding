@@ -24,8 +24,9 @@
 <div class="cursor" id="cursor" aria-hidden="true"></div>
 
 <nav class="nav">
-  <a href="../" class="nav__brand" data-cursor aria-label="Designs &amp; Words — home"><img src="../images/logo.png" alt="Designs &amp; Words"></a>
+  <a href="https://designsandwords.in/" class="nav__brand" data-cursor target="_blank" rel="noopener" aria-label="Designs &amp; Words — designsandwords.in"><img src="../images/logo.png" alt="Designs &amp; Words"></a>
   <ul class="nav__links">
+    <li><a href="../#top" data-cursor>Home</a></li>
     <li><a href="../#work" data-cursor>Work</a></li>
     <li><a href="../#about" data-cursor>About</a></li>
     <li><a href="../#contact" data-cursor>Contact</a></li>
@@ -37,7 +38,8 @@
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <a href="../">All work</a>
+  <a href="../#top">Home</a>
+    <a href="../">All work</a>
   <a href="../#about">About</a>
   <a href="../#contact">Contact</a>
   <a href="https://www.instagram.com/designs.words" target="_blank" rel="noopener">Instagram</a>
@@ -54,20 +56,18 @@
   <p class="detail-hero__intro" data-fade>Natural stone with <em>quiet authority</em>. Provenance carved into the brand, presented like the material itself.</p>
 </section>
 
-<section class="detail-image detail-image--slide" data-parallax>
-  <div class="showcase__inner"><img src="../images/rajshree-1.webp" alt="Rajshree Marbles — frame 1" loading="lazy"></div>
-</section>
-<section class="detail-image detail-image--slide" data-parallax data-parallax-invert>
-  <div class="showcase__inner"><img src="../images/rajshree-2.webp" alt="Rajshree Marbles — frame 2" loading="lazy"></div>
-</section>
-<section class="detail-image detail-image--slide" data-parallax>
-  <div class="showcase__inner"><img src="../images/rajshree-3.webp" alt="Rajshree Marbles — frame 3" loading="lazy"></div>
-</section>
-<section class="detail-image detail-image--slide" data-parallax data-parallax-invert>
-  <div class="showcase__inner"><img src="../images/rajshree-4.webp" alt="Rajshree Marbles — frame 4" loading="lazy"></div>
-</section>
-<section class="detail-image detail-image--slide" data-parallax>
-  <div class="showcase__inner"><img src="../images/rajshree-5.webp" alt="Rajshree Marbles — frame 5" loading="lazy"></div>
+<!-- Horizontal carousel: vertical scroll translates the track left, no gaps between images -->
+<section class="rajshree-carousel" data-rajshree-carousel style="--slides: 5;" aria-label="Rajshree Marbles brand frames">
+  <div class="rajshree-carousel__pin">
+    <div class="rajshree-carousel__track">
+      <div class="rajshree-carousel__slide"><img src="../images/rajshree-1.webp" alt="Rajshree Marbles — frame 1"></div>
+      <div class="rajshree-carousel__slide"><img src="../images/rajshree-2.webp" alt="Rajshree Marbles — frame 2"></div>
+      <div class="rajshree-carousel__slide"><img src="../images/rajshree-3.webp" alt="Rajshree Marbles — frame 3"></div>
+      <div class="rajshree-carousel__slide"><img src="../images/rajshree-4.webp" alt="Rajshree Marbles — frame 4"></div>
+      <div class="rajshree-carousel__slide"><img src="../images/rajshree-5.webp" alt="Rajshree Marbles — frame 5"></div>
+    </div>
+    <div class="rajshree-carousel__progress" id="rajshreeProgress">01 / 05</div>
+  </div>
 </section>
 
 <section class="detail-close">
@@ -76,11 +76,11 @@
 
 <section class="detail-next">
   <span class="detail-next__label">Next case</span>
-  <a href="mvip.html" class="detail-next__link" data-cursor>MVIP <em>Industries</em> →</a>
+  <a href="ditya.html" class="detail-next__link" data-cursor>Ditya <em>Infra</em> →</a>
 </section>
 
 <footer class="footer">
-  <span class="footer__brand"><img src="../images/logo.png" alt="Designs &amp; Words"></span>
+  <a href="https://designsandwords.in/" class="footer__brand" data-cursor target="_blank" rel="noopener" aria-label="Designs &amp; Words — designsandwords.in"><img src="../images/logo.png" alt="Designs &amp; Words"></a>
   <span>E-16, Gokhle Marg, C Scheme, Jaipur 302001 — IN</span>
   <div class="footer__links">
     <a href="https://www.instagram.com/designs.words" target="_blank" rel="noopener" data-cursor>Instagram</a>
