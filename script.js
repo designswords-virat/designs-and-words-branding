@@ -135,15 +135,18 @@
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var entries = [];
-  // Skip .detail-image — those use natural sizing, not the parallax pattern
-  document.querySelectorAll('[data-parallax]:not(.detail-image)').forEach(function (section) {
+  // Detail pages: parallax on full-width images. Skip capped variants (--square / --portrait).
+  document.querySelectorAll('[data-parallax]:not(.detail-image--square):not(.detail-image--portrait)').forEach(function (section) {
     var inner = section.querySelector('.showcase__inner');
     if (!inner) return;
+    // Detail-image variants get a gentler strength (0.04) so translation stays
+    // within the 50px buffer set on the inner. Home-page showcases keep 0.18.
+    var defaultStrength = section.classList.contains('detail-image') ? 0.04 : 0.18;
     entries.push({
       section: section,
       inner: inner,
       direction: section.hasAttribute('data-parallax-invert') ? -1 : 1,
-      strength: parseFloat(section.getAttribute('data-parallax-strength')) || 0.18
+      strength: parseFloat(section.getAttribute('data-parallax-strength')) || defaultStrength
     });
   });
   if (!entries.length) return;

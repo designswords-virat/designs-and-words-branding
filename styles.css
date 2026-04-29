@@ -457,15 +457,12 @@ body.menu-open { overflow: hidden; }
 }
 .detail-hero__intro em { font-style: italic; color: var(--accent); }
 
-/* Full-width image sections — natural aspect, no cropping */
+/* DEFAULT detail-image — full viewport width, parallax-enabled */
 .detail-image {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  position: relative;
   background: var(--bg);
-  padding: clamp(32px, 4vw, 80px) 0;
-  margin: 0;
   opacity: 0;
   transform: translateY(40px);
   transition:
@@ -473,51 +470,47 @@ body.menu-open { overflow: hidden; }
     transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .detail-image.is-visible { opacity: 1; transform: translateY(0); }
-.detail-image .showcase__inner { display: contents; }
+.detail-image .showcase__inner {
+  display: block;
+  width: 100%;
+  margin-top: -50px;   /* buffer for parallax — image can translate ±50px */
+  margin-bottom: -50px;
+  will-change: transform;
+}
 .detail-image img {
   display: block;
   width: 100%;
   height: auto;
   max-width: 100%;
-  max-height: 90vh;
-  object-fit: contain;
 }
 
-/* Variants — only override max-width / max-height / surface, never crop */
-.detail-image--photo img    { max-width: min(1400px, 100%); }
-.detail-image--wide  img    { max-width: min(1400px, 95%); }
-.detail-image--tall  img    { max-width: min(900px, 92%); max-height: 92vh; }
+/* Background variants only — width stays 100% */
+.detail-image--logo  { background: #F4EFE3; }
+.detail-image--slide { background: var(--surface); }
+/* --photo, --wide, --tall use the default (no extra rule) */
 
-/* MVIP / MEGA: square assets — render TALL, width fits the image */
+/* CAPPED variants (MVIP / MEGA) — square brand-mark assets render at natural
+   width with max-height ceiling, centered, no parallax (no overflow needed).
+   These OVERRIDE the default full-width treatment. */
 .detail-image--square,
-.detail-image--portrait { padding: clamp(40px, 5vw, 96px) clamp(20px, 4vw, 64px); }
+.detail-image--portrait {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(40px, 5vw, 96px) 0;
+  overflow: visible;
+}
+.detail-image--square .showcase__inner,
+.detail-image--portrait .showcase__inner {
+  display: contents;
+  margin: 0;
+}
 .detail-image--square img,
 .detail-image--portrait img {
   width: auto;
   max-width: min(900px, 92%);
   max-height: 92vh;
   margin: 0 auto;
-}
-
-/* Logo on cream backdrop, smaller width cap */
-.detail-image--logo {
-  background: #F4EFE3;
-  padding: clamp(48px, 6vw, 120px) clamp(20px, 4vw, 64px);
-}
-.detail-image--logo img {
-  width: auto;
-  max-width: min(640px, 75%);
-  max-height: 70vh;
-  margin: 0 auto;
-}
-
-/* Slide / catalog content, slightly muted surface */
-.detail-image--slide {
-  background: var(--surface);
-  padding: clamp(40px, 5vw, 80px) 0;
-}
-.detail-image--slide img {
-  max-width: min(1400px, 95%);
 }
 
 /* Closing text block on detail pages */
