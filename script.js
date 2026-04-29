@@ -128,6 +128,39 @@
   });
 })();
 
+// ---------- Parallax for detail-page image sections ----------
+// Each [data-parallax] section has a .showcase__inner that translates Y based
+// on scroll position relative to viewport center. Uses the codified pattern
+// from brain/dw-build/README.md.
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var entries = [];
+  document.querySelectorAll('[data-parallax]').forEach(function (section) {
+    var inner = section.querySelector('.showcase__inner');
+    if (!inner) return;
+    entries.push({
+      section: section,
+      inner: inner,
+      direction: section.hasAttribute('data-parallax-invert') ? -1 : 1,
+      strength: parseFloat(section.getAttribute('data-parallax-strength')) || 0.18
+    });
+  });
+  if (!entries.length) return;
+  var vh = window.innerHeight;
+  window.addEventListener('resize', function () { vh = window.innerHeight; }, { passive: true });
+  function tick() {
+    entries.forEach(function (p) {
+      var rect = p.section.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > vh + 200) return;
+      var diff = (rect.top + rect.height / 2) - vh / 2;
+      var translate = -diff * p.strength * p.direction;
+      p.inner.style.transform = 'translate3d(0,' + translate.toFixed(2) + 'px,0)';
+    });
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
 // ---------- Hero word rotator ----------
 (function () {
   var el = document.querySelector('[data-rotator]');
