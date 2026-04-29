@@ -240,8 +240,13 @@ a, button, [data-cursor] { cursor: none; }
   right: 0;
   background-size: cover;
   background-position: center;
-  background-image: url("https://framerusercontent.com/images/KbVShwEuoNrSWSp6FOng2vRJ6Q.jpg");
   will-change: transform;
+}
+.showcase--mvip .showcase__inner {
+  background-image: url("https://framerusercontent.com/images/KbVShwEuoNrSWSp6FOng2vRJ6Q.jpg");
+}
+.showcase--mega .showcase__inner {
+  background-image: url("https://framerusercontent.com/images/aVhzzRohfx0Tsgb9dBVfX5l0Oi4.jpeg");
 }
 .showcase::after {
   content: "";
