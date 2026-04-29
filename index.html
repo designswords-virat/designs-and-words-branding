@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Designs&Words — Branding. Where strategy meets visual identity. From logo to language, we shape how your audience feels your story.">
+<meta property="og:title" content="Designs&Words — Branding">
+<meta property="og:description" content="Where strategy meets visual identity. From logo to language, we shape how your audience feels your story.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://framerusercontent.com/images/KbVShwEuoNrSWSp6FOng2vRJ6Q.jpg">
+<meta name="theme-color" content="#0E0E10">
+<title>Branding — Designs&amp;Words</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://framerusercontent.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Loader: DESIGNS slides in from left, & pops, WORDS slides in from right -->
+<div class="loader" id="loader" role="status" aria-label="Loading">
+  <div class="loader-mark" aria-label="Designs and Words">
+    <div class="loader-mark__word loader-mark__word--left">
+      <span style="--i:1">D</span><span style="--i:2">E</span><span style="--i:3">S</span><span style="--i:4">I</span><span style="--i:5">G</span><span style="--i:6">N</span><span style="--i:7">S</span>
+    </div>
+    <div class="loader-mark__amp">&amp;</div>
+    <div class="loader-mark__word">
+      <span style="--i:1">W</span><span style="--i:2">O</span><span style="--i:3">R</span><span style="--i:4">D</span><span style="--i:5">S</span>
+    </div>
+  </div>
+</div>
+
+<!-- Custom cursor (desktop only) -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel">View</span></div>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="#top" class="nav__brand" data-cursor>D&amp;W</a>
+  <a href="#start" class="nav__cta" data-cursor data-cursor-label="Start">Start a project →</a>
+</nav>
+
+<!-- Hero — enormous headline + tiny sub. No in-between sizes. -->
+<section class="hero" id="top">
+  <h1 class="hero__headline">Where strategy meets visual identity.</h1>
+  <p class="hero__sub tiny--lower">From logo to language, we shape how your audience feels your story.</p>
+  <a href="#mvip" class="hero__scroll" data-cursor>Scroll ↓</a>
+</section>
+
+<!-- MVIP showcase — full-bleed photo + parallax + overlay copy -->
+<section class="section showcase" id="mvip" data-parallax aria-label="MVIP case study">
+  <div class="showcase__inner"></div>
+  <div class="showcase__copy" data-fade>
+    <div class="showcase__eyebrow">Featured · Case study</div>
+    <h2 class="showcase__name">MVIP</h2>
+    <p class="showcase__line">A digital identity designed to reflect decades of industrial excellence and forward-looking vision.</p>
+    <a href="https://designsandwords.in/brand1" class="showcase__cta" data-cursor data-cursor-label="Read" target="_blank" rel="noopener">Explore the full brand manual →</a>
+  </div>
+</section>
+
+<!-- What is Branding — enormous title, tiny three-line list -->
+<section class="section" aria-label="What we do">
+  <div class="what">
+    <h2 class="what__title" data-fade>Branding.</h2>
+    <ul class="what__list" data-fade>
+      <li>Logo</li>
+      <li>Language</li>
+      <li>Visual identity</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Process — three rows, enormous numbers + tiny step labels -->
+<section class="section process" aria-label="Process">
+  <div class="process__row" data-fade>
+    <div class="process__num">01</div>
+    <div class="process__step">Discover</div>
+  </div>
+  <div class="process__row" data-fade>
+    <div class="process__num">02</div>
+    <div class="process__step">Define</div>
+  </div>
+  <div class="process__row" data-fade>
+    <div class="process__num">03</div>
+    <div class="process__step">Design</div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="cta-band" id="start">
+  <h2 class="cta-band__line" data-fade>Start a project.</h2>
+  <p class="cta-band__sub" data-fade>or write to <a href="mailto:hello@designsandwords.in" data-cursor>hello@designsandwords.in</a></p>
+</section>
+
+<!-- Footer — every element tiny, single line where possible -->
+<footer class="footer">
+  <a href="#top" class="footer__brand" data-cursor>Designs&amp;Words</a>
+  <span>E-16, Gokhle Marg, C Scheme, Jaipur 302001</span>
+  <a href="https://www.instagram.com/designs.words" data-cursor target="_blank" rel="noopener">Instagram</a>
+  <span>© 2026</span>
+</footer>
+
+</body>
+</html>
