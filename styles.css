@@ -222,15 +222,20 @@ a, button, [data-cursor] { cursor: none; }
   .hero__scroll { left: 24px; bottom: 24px; }
 }
 
-/* ---------- MVIP showcase (parallax) ---------- */
+/* ---------- Case study showcase: split frame (image | copy), one section ---------- */
 .showcase {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
   padding: 0;
-  display: flex;
-  align-items: flex-end;
-  color: var(--text-inverse);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: var(--text);
+}
+.showcase__image {
+  position: relative;
+  overflow: hidden;
+  min-height: 50vh;
 }
 .showcase__inner {
   position: absolute;
@@ -248,26 +253,31 @@ a, button, [data-cursor] { cursor: none; }
 .showcase--mega .showcase__inner {
   background-image: url("https://framerusercontent.com/images/aVhzzRohfx0Tsgb9dBVfX5l0Oi4.jpeg");
 }
-.showcase::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(14,14,16,0) 30%, rgba(14,14,16,0.75) 100%);
-}
+/* Alternating order: MVIP image-right copy-left, MEGA image-left copy-right */
+.showcase--mvip .showcase__image { order: 2; }
+.showcase--mvip .showcase__copy  { order: 1; }
+.showcase--mega .showcase__image { order: 1; }
+.showcase--mega .showcase__copy  { order: 2; }
 .showcase__copy {
-  position: relative;
-  z-index: 2;
-  padding: 64px;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  justify-content: center;
+  padding: 96px 80px;
+  background: var(--bg);
+  gap: 36px;
 }
-.showcase__eyebrow { font-size: var(--tiny); font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; opacity: 0.7; }
+.showcase--mega .showcase__copy { background: #F4F2EE; } /* a quiet warm cream so the two cases read distinct */
+.showcase__eyebrow {
+  font-size: var(--tiny);
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
 .showcase__name {
   font-family: var(--display);
   font-weight: 400;
-  font-size: var(--enormous);
+  font-size: clamp(80px, 12vw, 200px);
   line-height: 0.85;
   letter-spacing: -0.04em;
 }
@@ -277,8 +287,8 @@ a, button, [data-cursor] { cursor: none; }
   letter-spacing: 0.06em;
   line-height: 1.55;
   text-transform: none;
-  max-width: 40ch;
-  opacity: 0.85;
+  max-width: 36ch;
+  opacity: 0.75;
 }
 .showcase__cta {
   font-size: var(--tiny);
@@ -290,7 +300,9 @@ a, button, [data-cursor] { cursor: none; }
   align-self: flex-start;
 }
 @media (max-width: 768px) {
-  .showcase__copy { padding: 32px 24px; gap: 20px; }
+  .showcase { grid-template-columns: 1fr; min-height: auto; }
+  .showcase__image { min-height: 60vh; order: 1 !important; }
+  .showcase__copy  { padding: 56px 24px; gap: 24px; order: 2 !important; }
 }
 
 /* ---------- What is Branding ---------- */
