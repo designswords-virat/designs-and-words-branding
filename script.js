@@ -49,7 +49,7 @@
     return;
   }
   if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('[data-fade], .tile').forEach(function (el) { el.classList.add('is-visible'); });
+    document.querySelectorAll('[data-fade], .tile, .detail-image').forEach(function (el) { el.classList.add('is-visible'); });
     return;
   }
   var observer = new IntersectionObserver(function (entries) {
@@ -59,7 +59,7 @@
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
-  document.querySelectorAll('[data-fade], .tile').forEach(function (el) { observer.observe(el); });
+  document.querySelectorAll('[data-fade], .tile, .detail-image').forEach(function (el) { observer.observe(el); });
 })();
 
 // ---------- Custom cursor ----------
@@ -135,7 +135,8 @@
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var entries = [];
-  document.querySelectorAll('[data-parallax]').forEach(function (section) {
+  // Skip .detail-image — those use natural sizing, not the parallax pattern
+  document.querySelectorAll('[data-parallax]:not(.detail-image)').forEach(function (section) {
     var inner = section.querySelector('.showcase__inner');
     if (!inner) return;
     entries.push({
