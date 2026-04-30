@@ -234,40 +234,46 @@
   el.style.transition = 'opacity 320ms ease';
 })();
 
-// ---------- Motion clips — play/pause on click, autoplay on scroll ----------
+// ---------- Motion clips — hover (desktop) / tap (mobile) ----------
 (function () {
   var clips = document.querySelectorAll('.motion-clip');
   if (!clips.length) return;
 
-  // IntersectionObserver: load + play when in view, pause when out
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      var video = entry.target.querySelector('video');
-      if (!video) return;
-      if (entry.isIntersecting) {
-        video.load();
-        video.play().catch(function () {});
-        entry.target.classList.add('is-playing');
-      } else {
-        video.pause();
-        entry.target.classList.remove('is-playing');
+  var isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  function pauseAllExcept(activeClip) {
+    clips.forEach(function (other) {
+      if (other === activeClip) return;
+      var v = other.querySelector('video');
+      if (v && !v.paused) {
+        v.pause();
+        other.classList.remove('is-playing');
       }
     });
-  }, { threshold: 0.3 });
+  }
 
   clips.forEach(function (clip) {
-    io.observe(clip);
-    var btn = clip.querySelector('.motion-clip__play');
     var video = clip.querySelector('video');
-    if (!btn || !video) return;
-    clip.addEventListener('click', function () {
-      if (video.paused) {
-        video.play().catch(function () {});
-        clip.classList.add('is-playing');
-      } else {
-        video.pause();
-        clip.classList.remove('is-playing');
-      }
-    });
+    if (!video) return;
+
+    function play() {
+      pauseAllExcept(clip);
+      video.muted = false;
+      video.play().catch(function () {});
+      clip.classList.add('is-playing');
+    }
+    function pause() {
+      video.pause();
+      clip.classList.remove('is-playing');
+    }
+
+    if (isDesktop) {
+      clip.addEventListener('mouseenter', play);
+      clip.addEventListener('mouseleave', pause);
+    } else {
+      clip.addEventListener('click', function () {
+        video.paused ? play() : pause();
+      });
+    }
   });
 })();
